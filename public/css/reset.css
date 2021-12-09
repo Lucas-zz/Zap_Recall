@@ -36,6 +36,13 @@ a {
 	text-decoration: none;
   	color: inherit;
 }
+button {
+	text-decoration: none;
+	font-size: 100%;
+	font-family: inherit;
+	border: 0;
+	padding: 0;
+}
 ol, ul, li {
 	list-style: none;
 }

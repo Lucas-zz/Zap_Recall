@@ -1,3 +1,246 @@
 * {
-    background-color: #0D1117;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.main-initial-page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-inicio {
+    margin: auto;
+}
+
+.button-start {
+    margin: auto;
+
+    padding: 24px 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+
+    border: 3px solid #FFEF61;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background-color: inherit;
+}
+
+.button-start:hover {
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    text-shadow: 2px 2px #E5E5E5;
+}
+
+.button-start .next-arrows {
+    padding-left: 5px;
+}
+
+.main-flashcard-page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flashcard-page-header {
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flashcard-page-header img {
+    padding: 26px;
+}
+
+
+/* flashcard pergunta */
+.question, .answer, .options {
+    width: 392px;
+    height: 575px;  
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+
+.flashcard-top-number {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    
+    padding: 12px;
+    
+    align-self: flex-end;
+}
+
+.question .central-text {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    
+    align-self: center;
+}
+
+.flashcard-bottom-arrow {
+    width: 100%; 
+    
+    padding: 12px;
+    
+    text-align: end;
+}
+.flashcard-bottom-arrow .bottom-arrow {
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+}
+
+
+/* flashcard respondido */
+.flashcard-inside-header {
+    display: flex;
+}
+
+.flashcard-inside-header .flashcard-question {
+    width: 100%;
+    padding: 12px;
+
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 21px;
+
+    text-align: end;
+}
+
+.flashcard-inside-header .flashcard-top-number {
+    width: 60%;
+    text-align: end;
+}
+
+.answer .central-text, .options .central-text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+
+    margin: 49px;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.flashcard.answer.aprendi-agora {
+    border: 5px solid #000;
+}
+
+.flashcard.answer.nao-lembrei {
+    border: 5px solid #F64848
+}
+
+.flashcard.answer.lembrei {
+    border: 5px solid #62DB38;
+}
+
+.flashcard.answer.zap {
+    border: 5px solid #FFEF61;
+}
+
+
+/* flashcards com as opções */
+
+.flashcard-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    margin: 19px 49px;
+
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.flashcard-options > button {
+    width: 65px;
+    height: 48px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+    
+    box-sizing: border-box;
+    
+    border: 3px solid;
+    border-radius: 12px;
+
+    background-color: inherit;
+
+    cursor: pointer;
+}
+
+.flashcard-options .aprendi-agora {
+    border-color: #000;
+}
+
+.flashcard-options .nao-lembrei {
+    border-color: #F64848;
+}
+
+.flashcard-options .lembrei {
+    border-color: #62DB38;
+}
+
+.flashcard-options .zap {
+    border-color: #FFEF61;
+}
+
+
+
+
+
+
+
+
+.flashcard.question.hidden {
+    display: none;
+}
+
+.flashcard.answer.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
 }
