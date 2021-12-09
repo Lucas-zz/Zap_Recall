@@ -81,47 +81,41 @@ body {
 
 
 /* flashcard pergunta */
-.question, .answer, .options {
+.flashcard {
     width: 392px;
     height: 575px;  
     
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
+
+    position: relative;
 }
 
 .flashcard-top-number {
+    position: absolute;
+    top: 16px;
+    right: 17px;
+
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    
-    padding: 12px;
-    
-    align-self: flex-end;
 }
 
-.question .central-text {
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 33px;
-    
-    align-self: center;
-}
 
 .flashcard-bottom-arrow {
-    width: 100%; 
-    
-    padding: 12px;
-    
-    text-align: end;
+    position: absolute;
+    bottom: 16px;
+    right: 17px;
 }
 .flashcard-bottom-arrow .bottom-arrow {
     width: 40px;
     height: 40px;
-
+    
     cursor: pointer;
 }
 
@@ -129,48 +123,64 @@ body {
 /* flashcard respondido */
 .flashcard-inside-header {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flashcard-inside-header .flashcard-question {
-    width: 100%;
-    padding: 12px;
+    position: absolute;
+    top: 16px;
 
+    width: 60%;
+    padding: 0 16px;
+    
     font-weight: bold;
     font-size: 12px;
     line-height: 21px;
-
-    text-align: end;
+    
+    text-align: center;
+    word-break: break-all;
 }
 
-.flashcard-inside-header .flashcard-top-number {
-    width: 60%;
-    text-align: end;
-}
-
-.answer .central-text, .options .central-text {
+.central-text{
     font-weight: 300;
     font-size: 16px;
     line-height: 19px;
-
+    
     margin: 49px;
 
     text-align: justify;
     text-justify: inter-word;
 }
 
-.flashcard.answer.aprendi-agora {
+.central-text-question {
+    width: 50%;
+    
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    word-break: break-all;
+}
+
+.flashcard.aprendi-agora {
     border: 5px solid #000;
 }
 
-.flashcard.answer.nao-lembrei {
+.flashcard.nao-lembrei {
     border: 5px solid #F64848
 }
 
-.flashcard.answer.lembrei {
+.flashcard.lembrei {
     border: 5px solid #62DB38;
 }
 
-.flashcard.answer.zap {
+.flashcard.zap {
     border: 5px solid #FFEF61;
 }
 
@@ -178,12 +188,15 @@ body {
 /* flashcards com as opções */
 
 .flashcard-options {
+    position: absolute;
+    bottom: 11px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
 
-    margin: 19px 49px;
+    margin: 0 34px;
 
     font-weight: normal;
     font-size: 10px;
@@ -199,6 +212,7 @@ body {
     align-items: center;
 
     padding: 5px;
+    margin: 8px;
     
     box-sizing: border-box;
     
@@ -226,20 +240,39 @@ body {
     border-color: #FFEF61;
 }
 
+.result-page {
+    display: flex;
+    flex-direction: column;
 
-
-
-
-
-
-
-.flashcard.question.hidden {
-    display: none;
+    text-align: center;
 }
 
-.flashcard.answer.hidden {
-    display: none;
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: inherit;
 }
+
+.result img {
+    padding: 15px;
+}
+
+.result-message {
+    margin: 25px;
+
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+
+    color: inherit;
+}
+
 
 .hidden {
     display: none;
