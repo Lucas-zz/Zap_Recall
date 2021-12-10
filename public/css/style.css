@@ -149,8 +149,7 @@ body {
     
     margin: 49px;
 
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: center;
 }
 
 .central-text-question {
@@ -165,7 +164,6 @@ body {
     align-items: center;
 
     text-align: center;
-    word-break: break-all;
 }
 
 .flashcard.aprendi-agora {
@@ -241,8 +239,13 @@ body {
 }
 
 .result-page {
+    width: 100%;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
 }

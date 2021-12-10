@@ -1,11 +1,27 @@
-import Flashcard from "./Flashcard";
+import { useState } from "react";
+import Failure from "../EndingScreen/Failure.js";
+import Success from "../EndingScreen/Success.js";
+
+import Flashcard from "./Flashcards/Flashcard.js";
 import Header from "./Header"
 
 export default function FlashcardPage() {
+    const [status, setStatus] = useState(0);
+    const [atual, setAtual] = useState(1);
+
     return (
         <>
             <Header />
-            <Flashcard question={questionsReact.question} answer={questionsReact.answer} number={questionsReact.number} total={questionsReact.length} />
+            {questionsReact.map(deck => (
+                atual === deck.number &&
+                <Flashcard
+                    {...deck}
+                    setAtual={setAtual}
+                    setStatus={setStatus}
+                    total={questionsReact.length}
+                />
+            ))}
+            {status === 0 ? <Success /> : <Failure />}
         </>
     );
 }
