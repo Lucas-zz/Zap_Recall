@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TopCounter from "../TopCounter";
+import TopCounter from "./TopCounter";
 
 export default function Flashcard({ question, answer, number, total, setAtual, setStatus }) {
     const [border, setBorder] = useState("");
