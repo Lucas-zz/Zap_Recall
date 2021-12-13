@@ -10,9 +10,11 @@ import FailureEmoji from "../../assets/sad.png";
 export default function FlashcardPage({ chooseDeck, deckName }) {
     const [status, setStatus] = useState(0);
     const [atual, setAtual] = useState(1);
+    const [fail, setFail] = useState(0);
 
-    console.log(chooseDeck);
-    console.log(deckName);
+    const failOnlyOne = `Você esqueceu ${fail} flashcard...`;
+    const failMoreThanOne = `Você esqueceu ${fail} flashcards...`;
+
     return (
         <>
             <Header />
@@ -24,6 +26,8 @@ export default function FlashcardPage({ chooseDeck, deckName }) {
                     setStatus={setStatus}
                     total={chooseDeck.length}
                     deckName={deckName}
+                    setFail={setFail}
+                    fail={fail}
                 />
             ))}
             {atual > chooseDeck.length && (status === 0
@@ -33,12 +37,21 @@ export default function FlashcardPage({ chooseDeck, deckName }) {
                     emoji={SuccessEmoji}
                     emojiAlt="congratulations-party-emoji"
                 />
-                : <EndingScreen
-                    result="Puts.."
-                    resultMessage={`Você esqueceu alguns flashcards... Não desanime! Na próxima você consegue!`}
-                    emoji={FailureEmoji}
-                    emojiAlt="sad-crying-emoji"
-                />)
+                : (fail === 1
+                    ? <EndingScreen
+                        result="Puts.."
+                        resultMessage={failOnlyOne}
+                        resultMessage2="Não desanime! Na próxima você consegue!"
+                        emoji={FailureEmoji}
+                        emojiAlt="sad-crying-emoji"
+                    />
+                    : <EndingScreen
+                        result="Puts.."
+                        resultMessage={failMoreThanOne}
+                        resultMessage2="Não desanime! Na próxima você consegue!"
+                        emoji={FailureEmoji}
+                        emojiAlt="sad-crying-emoji"
+                    />))
             }
         </>
     );

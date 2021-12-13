@@ -1,4 +1,4 @@
-export default function EndingScreen({ result, resultMessage, emoji, emojiAlt }) {
+export default function EndingScreen({ result, resultMessage, resultMessage2, emoji, emojiAlt }) {
     return (
         <div className="result-page">
             <span className="result">
@@ -7,6 +7,7 @@ export default function EndingScreen({ result, resultMessage, emoji, emojiAlt })
             </span>
             <span className="result-message">
                 <div>{resultMessage}</div>
+                {resultMessage !== undefined && <div>{resultMessage2}</div>}
             </span>
         </div>
     );

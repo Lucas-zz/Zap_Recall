@@ -94,8 +94,6 @@ body {
     color: #000;
 }
 
-
-/* flashcard pergunta */
 .flashcard {
     width: 392px;
     height: 575px;  
@@ -111,10 +109,6 @@ body {
     position: relative;
 }
 
-.flashcard.options {
-    padding: 5px;
-}
-
 .flashcard-top-number {
     position: absolute;
     top: 16px;
@@ -125,12 +119,22 @@ body {
     line-height: 21px;
 }
 
+.padding .flashcard-top-number {
+    top: 21px;
+    right: 22px;
+}
 
 .flashcard-bottom-arrow {
     position: absolute;
     bottom: 16px;
     right: 17px;
 }
+
+.padding .flashcard-bottom-arrow {
+    bottom: 21px;
+    right: 22px;
+}
+
 .flashcard-bottom-arrow .bottom-arrow {
     width: 40px;
     height: 40px;
@@ -138,8 +142,6 @@ body {
     cursor: pointer;
 }
 
-
-/* flashcard respondido */
 .flashcard-inside-header {
     display: flex;
     justify-content: center;
@@ -158,6 +160,10 @@ body {
     line-height: 21px;
     
     text-align: center;
+}
+
+.padding .flashcard-inside-header .flashcard-question {
+    top: 21px;
 }
 
 .central-text{
@@ -199,9 +205,6 @@ body {
 .flashcard.zap {
     border: 5px solid #FFEF61;
 }
-
-
-/* flashcards com as opções */
 
 .flashcard-options {
     position: absolute;
@@ -266,6 +269,7 @@ body {
     align-items: center;
 
     text-align: center;
+    
 }
 
 .result {
@@ -294,7 +298,7 @@ body {
     color: inherit;
 }
 
-
-.hidden {
-    display: none;
+\a::after {
+    content: "\a";
+    white-space: pre;
 }

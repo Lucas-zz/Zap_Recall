@@ -1,11 +1,12 @@
 import TopCounter from "./TopCounter";
 
-export default function OptionsCard({ setCard, setBorder, setStatus, number, total, question, answer }) {
+export default function OptionsCard({ setCard, setBorder, setStatus, setFail, number, total, question, answer, fail }) {
 
     function naoLembrei() {
         setBorder("nao-lembrei");
         setStatus(1);
         setCard(2);
+        setFail(fail + 1);
     }
 
     function aprendiAgora() {
@@ -24,7 +25,7 @@ export default function OptionsCard({ setCard, setBorder, setStatus, number, tot
     }
 
     return (
-        <div className="flashcard options" data-identifier="flashcard">
+        <div className="flashcard padding" data-identifier="flashcard">
             <TopCounter number={number} total={total} />
             <div className="flashcard-inside-header">
                 <span class="flashcard-question">{question}</span>

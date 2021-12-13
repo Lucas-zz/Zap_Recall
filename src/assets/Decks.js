@@ -1,5 +1,55 @@
 export const decks = [
     {
+        name: "HTML",
+        data: [
+            {
+                question: "HTML é uma linguagem de ___.",
+                answer: "formatação",
+                number: 1,
+            },
+            {
+                question: "Quando o programador deseja aplicar uma formatação na tag, esse processo é chamado de estilo ___.",
+                answer: "in-line",
+                number: 2,
+            },
+            {
+                question: "A tag para adição do estilo CSS fica entre quais tags?",
+                answer: "</title> </head>",
+                number: 3,
+            },
+            {
+                question: "Como é feita a formatação in-line de uma tag de lista?",
+                answer: "<ul style='list-style-type:circle'>",
+                number: 4,
+            },
+            {
+                question: "Qual é a função da tag DD?",
+                answer: "Elemento do Termo",
+                number: 5,
+            },
+            {
+                question: "'É o tamanho percentual comparado ao tamanho do browser.' Essa é a definição de ___.",
+                answer: "font-size",
+                number: 6,
+            },
+            {
+                question: "Para criar um link entre uma página e outra, usa-se a tag ___.",
+                answer: "<a href='pagina.html'> </a>",
+                number: 7,
+            },
+            {
+                question: "O código para inserção de arquivo CSS é ___.",
+                answer: "<link href='arquivo.css' rel='stylesheet' type='text/css'",
+                number: 8,
+            },
+            {
+                question: "O conteúdo de uma página feita em estilo incorporado fica entre as tags ___.",
+                answer: "<style></style>",
+                number: 9,
+            }
+        ]
+    },
+    {
         name: "React",
         data: [
             {
@@ -8,13 +58,13 @@ export const decks = [
                 number: 1,
             },
             {
-                question: "O React é ___",
-                answer: "uma biblioteca JavaScript para construção de interfaces.",
+                question: "O React é ___.",
+                answer: "uma biblioteca JavaScript para construção de interfaces",
                 number: 2,
             },
             {
-                question: "Componentes deve iniciar com ___",
-                answer: "letra maiúscula.",
+                question: "Componentes deve iniciar com ___.",
+                answer: "letra maiúscula",
                 number: 3,
             },
             {
@@ -23,23 +73,23 @@ export const decks = [
                 number: 4,
             },
             {
-                question: "O ReactDOM nos ajuda ___",
-                answer: "interagindo com a DOM para colocar componentes React na mesma.",
+                question: "O ReactDOM nos ajuda ___.",
+                answer: "interagindo com a DOM para colocar componentes React na mesma",
                 number: 5,
             },
             {
-                question: "Usamos o npm para ___",
-                answer: "gerenciar os pacotes necessários e suas dependências.",
+                question: "Usamos o npm para ___.",
+                answer: "gerenciar os pacotes necessários e suas dependências",
                 number: 6,
             },
             {
-                question: "Usamos props para ___",
-                answer: "passar diferentes informações para componentes.",
+                question: "Usamos props para ___.",
+                answer: "passar diferentes informações para componentes",
                 number: 7,
             },
             {
-                question: "Usamos estado (state) para ___",
-                answer: "dizer para o React quais informações, quando atualizadas, devem renderizar a tela novamente.",
+                question: "Usamos estado (state) para ___.",
+                answer: "dizer para o React quais informações, quando atualizadas, devem renderizar a tela novamente",
                 number: 8,
             }
         ]
@@ -132,51 +182,6 @@ export const decks = [
                 answer: "Não ter que decorar os endereços IP dos servidores.",
                 number: 5,
             },
-        ]
-    },
-    {
-        name: "React",
-        data: [
-            {
-                question: "O que é JSX?",
-                answer: "Uma extensão de linguagem do JavaScript.",
-                number: 1,
-            },
-            {
-                question: "O React é ___",
-                answer: "uma biblioteca JavaScript para construção de interfaces.",
-                number: 2,
-            },
-            {
-                question: "Componentes deve iniciar com ___",
-                answer: "letra maiúscula.",
-                number: 3,
-            },
-            {
-                question: "Podemos colocar ___ dentro do JSX.",
-                answer: "expressões",
-                number: 4,
-            },
-            {
-                question: "O ReactDOM nos ajuda ___",
-                answer: "interagindo com a DOM para colocar componentes React na mesma.",
-                number: 5,
-            },
-            {
-                question: "Usamos o npm para ___",
-                answer: "gerenciar os pacotes necessários e suas dependências.",
-                number: 6,
-            },
-            {
-                question: "Usamos props para ___",
-                answer: "passar diferentes informações para componentes.",
-                number: 7,
-            },
-            {
-                question: "Usamos estado (state) para ___",
-                answer: "dizer para o React quais informações, quando atualizadas, devem renderizar a tela novamente.",
-                number: 8,
-            }
         ]
     },
 ]
