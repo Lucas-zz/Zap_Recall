@@ -82,6 +82,18 @@ body {
     padding: 26px;
 }
 
+.deck-title {
+    position: fixed;
+    text-align: center;
+    top: 80px;
+
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+
+    color: #000;
+}
+
 
 /* flashcard pergunta */
 .flashcard {
@@ -97,6 +109,10 @@ body {
     border-radius: 12px;
 
     position: relative;
+}
+
+.flashcard.options {
+    padding: 5px;
 }
 
 .flashcard-top-number {

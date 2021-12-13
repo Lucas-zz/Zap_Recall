@@ -2,49 +2,24 @@ import { useState } from "react";
 import TopCounter from "./TopCounter";
 
 import turnArrow from "../../../assets/turn.png";
+import QuestionCard from "./QuestionCard";
+import OptionsCard from "./OptionsCard";
+import AnswerCard from "./AnswerCard";
 
-export default function Flashcard({ question, answer, number, total, setAtual, setStatus }) {
-    const [border, setBorder] = useState("");
+export default function Flashcard({ question, answer, number, total, setAtual, setStatus, deckName }) {
+    const [border, setBorder] = useState('');
+    const [card, setCard] = useState(0);
 
-    function multipleFunctions() {
-        setBorder("nao-lembrei");
-        setStatus(1);
-    }
 
     return (
         <main class="main-flashcard-page ">
-            <div className="flashcard" data-identifier="flashcard">
-                <TopCounter number={number} total={total} />
-                <div className="central-text-question">{question}</div>
-                <span className="flashcard-bottom-arrow" data-identifier="arrow">
-                    <img className="bottom-arrow" src={turnArrow} alt="card-bottom-arrow" />
-                </span>
-            </div>
+            <div className="deck-title">{deckName}</div>
 
-            <div className="flashcard" data-identifier="flashcard">
-                <TopCounter number={number} total={total} />
-                <div className="flashcard-inside-header">
-                    <span class="flashcard-question">{question}</span>
-                </div>
-                <div class="central-text">{answer}</div>
-                <div class="flashcard-options">
-                    <button onClick={() => setBorder("aprendi-agora")} class="aprendi-agora">Aprendi agora</button>
-                    <button onClick={() => multipleFunctions()} class="nao-lembrei">Não lembrei</button>
-                    <button onClick={() => setBorder("lembrei")} class="lembrei">Lembrei com esforço</button>
-                    <button onClick={() => setBorder("zap")} class="zap">Zap!</button>
-                </div>
-            </div>
+            {card === 0 && <QuestionCard number={number} total={total} question={question} turnArrow={turnArrow} setCard={setCard} />}
 
-            <div class={`flashcard ${border}`} data-identifier="flashcard">
-                <TopCounter number={number} total={total} />
-                <div class="flashcard-inside-header">
-                    <span class="flashcard-question">{question}</span>
-                </div>
-                <div class="central-text">{answer}</div>
-                <span onClick={() => setAtual(number + 1)} class="flashcard-bottom-arrow" data-identifier="arrow">
-                    <img class="bottom-arrow" src={turnArrow} alt="card-bottom-arrow" />
-                </span>
-            </div>
+            {card === 1 && <OptionsCard number={number} total={total} question={question} answer={answer} setBorder={setBorder} setStatus={setStatus} setCard={setCard} />}
+
+            {card === 2 && <AnswerCard number={number} total={total} question={question} answer={answer} border={border} turnArrow={turnArrow} setAtual={setAtual} setCard={setCard} />}
 
         </main >
     );

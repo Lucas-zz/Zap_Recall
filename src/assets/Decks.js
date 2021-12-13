@@ -98,7 +98,7 @@ export const decks = [
                 number: 10,
             },
             {
-                question: "O que são Status Codes",
+                question: "O que são Status Codes?",
                 answer: "Códigos para dar mais informações sobre uma requisição (sucesso/erro de cliente/erro de servidor).",
                 number: 11,
             }

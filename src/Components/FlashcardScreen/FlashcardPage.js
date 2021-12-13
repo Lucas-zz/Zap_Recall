@@ -7,27 +7,26 @@ import EndingScreen from "../EndingScreen/EndingScreen.js";
 import SuccessEmoji from "../../assets/party.png";
 import FailureEmoji from "../../assets/sad.png";
 
-export default function FlashcardPage(data) {
+export default function FlashcardPage({ chooseDeck, deckName }) {
     const [status, setStatus] = useState(0);
     const [atual, setAtual] = useState(1);
 
-
-    // let choosenDeck = Array.from(chooseDeck);
-
-    console.log(data.chooseDeck);
+    console.log(chooseDeck);
+    console.log(deckName);
     return (
         <>
             <Header />
-            {data.chooseDeck.map(deck => (
+            {chooseDeck.map(deck => (
                 atual === deck.number &&
                 <Flashcard
                     {...deck}
                     setAtual={setAtual}
                     setStatus={setStatus}
-                    total={data.chooseDeck.length}
+                    total={chooseDeck.length}
+                    deckName={deckName}
                 />
             ))}
-            {atual > data.chooseDeck.length && (status === 0
+            {atual > chooseDeck.length && (status === 0
                 ? <EndingScreen
                     result="PARABÉNS!"
                     resultMessage="Você não esqueceu de nenhum flashcard!"
