@@ -20,7 +20,7 @@ export default function EndingScreen({ result, resultMessage, resultMessage2, em
                 {resultMessage !== undefined && <div>{resultMessage2}</div>}
             </span>
             <div onClick={() => restart()} className="button-start">
-                Tentar Novamente
+                Tentar novamente
             </div>
         </div>
     );
