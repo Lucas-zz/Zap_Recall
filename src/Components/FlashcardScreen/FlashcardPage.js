@@ -7,7 +7,7 @@ import EndingScreen from "../EndingScreen/EndingScreen.js";
 import SuccessEmoji from "../../assets/party.png";
 import FailureEmoji from "../../assets/sad.png";
 
-export default function FlashcardPage({ chooseDeck, deckName }) {
+export default function FlashcardPage({ chooseDeck, deckName, setPage }) {
     const [status, setStatus] = useState(0);
     const [atual, setAtual] = useState(1);
     const [fail, setFail] = useState(0);
@@ -17,6 +17,7 @@ export default function FlashcardPage({ chooseDeck, deckName }) {
 
     return (
         <>
+            {console.log(setPage)}
             <Header />
             {chooseDeck.map(deck => (
                 atual === deck.number &&
@@ -36,6 +37,7 @@ export default function FlashcardPage({ chooseDeck, deckName }) {
                     resultMessage="Você não esqueceu de nenhum flashcard!"
                     emoji={SuccessEmoji}
                     emojiAlt="congratulations-party-emoji"
+                    setPage={setPage}
                 />
                 : (fail === 1
                     ? <EndingScreen
@@ -44,6 +46,7 @@ export default function FlashcardPage({ chooseDeck, deckName }) {
                         resultMessage2="Não desanime! Na próxima você consegue!"
                         emoji={FailureEmoji}
                         emojiAlt="sad-crying-emoji"
+                        setPage={setPage}
                     />
                     : <EndingScreen
                         result="Puts.."
@@ -51,6 +54,7 @@ export default function FlashcardPage({ chooseDeck, deckName }) {
                         resultMessage2="Não desanime! Na próxima você consegue!"
                         emoji={FailureEmoji}
                         emojiAlt="sad-crying-emoji"
+                        setPage={setPage}
                     />))
             }
         </>

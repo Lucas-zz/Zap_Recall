@@ -11,8 +11,9 @@ export default function StartScreen({ setPage }) {
         <main className="main-initial-page">
             <img className="logo-inicio" src={mainLogo} alt="logo-zap-recall" />
             <div className="all-buttons">
+                {console.log(setPage)}
                 {decks.map((deck =>
-                    <button onClick={() => setPage(<FlashcardPage chooseDeck={deck.data} deckName={deck.name} />)} className="button-start" data-identifier="start-zap-recall">
+                    <button onClick={() => setPage(<FlashcardPage chooseDeck={deck.data} deckName={deck.name} setPage={setPage} />)} className="button-start" data-identifier="start-zap-recall">
                         Praticar {deck.name}
                         <img className="next-arrows" src={nextArrows} alt="setas-next" />
                     </button>
