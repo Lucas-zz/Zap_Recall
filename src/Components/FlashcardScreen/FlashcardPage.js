@@ -1,70 +1,46 @@
 import { useState } from "react";
-import Failure from "../EndingScreen/Failure.js";
-import Success from "../EndingScreen/Success.js";
 
-import Flashcard from "./Flashcards/Flashcard.js";
 import Header from "./Header"
+import Flashcard from "./Flashcards/Flashcard.js";
+import EndingScreen from "../EndingScreen/EndingScreen.js";
 
-export default function FlashcardPage() {
+import SuccessEmoji from "../../assets/party.png";
+import FailureEmoji from "../../assets/sad.png";
+
+export default function FlashcardPage(data) {
     const [status, setStatus] = useState(0);
     const [atual, setAtual] = useState(1);
 
+
+    // let choosenDeck = Array.from(chooseDeck);
+
+    console.log(data.chooseDeck);
     return (
         <>
             <Header />
-            {questionsReact.map(deck => (
+            {data.chooseDeck.map(deck => (
                 atual === deck.number &&
                 <Flashcard
                     {...deck}
                     setAtual={setAtual}
                     setStatus={setStatus}
-                    total={questionsReact.length}
+                    total={data.chooseDeck.length}
                 />
             ))}
-            {status === 0 ? <Success /> : <Failure />}
+            {atual > data.chooseDeck.length && (status === 0
+                ? <EndingScreen
+                    result="PARABÉNS!"
+                    resultMessage="Você não esqueceu de nenhum flashcard!"
+                    emoji={SuccessEmoji}
+                    emojiAlt="congratulations-party-emoji"
+                />
+                : <EndingScreen
+                    result="Puts.."
+                    resultMessage={`Você esqueceu alguns flashcards... Não desanime! Na próxima você consegue!`}
+                    emoji={FailureEmoji}
+                    emojiAlt="sad-crying-emoji"
+                />)
+            }
         </>
     );
 }
-
-let questionsReact = [
-    {
-        question: "O que é JSX?",
-        answer: "Uma extensão de linguagem do JavaScript.",
-        number: 1,
-    },
-    {
-        question: "O React é ___",
-        answer: "uma biblioteca JavaScript para construção de interfaces.",
-        number: 2,
-    },
-    {
-        question: "Componentes deve iniciar com ___",
-        answer: "letra maiúscula.",
-        number: 3,
-    },
-    {
-        question: "Podemos colocar ___ dentro do JSX.",
-        answer: "expressões",
-        number: 4,
-    },
-    {
-        question: "O ReactDOM nos ajuda ___",
-        answer: "interagindo com a DOM para colocar componentes React na mesma.",
-        number: 5,
-    },
-    {
-        question: "Usamos o npm para ___",
-        answer: "gerenciar os pacotes necessários e suas dependências.",
-        number: 6,
-    },
-    {
-        question: "Usamos props para ___",
-        answer: "passar diferentes informações para componentes.",
-        number: 7,
-    },
-    {
-        question: "Usamos estado (state) para ___",
-        answer: "dizer para o React quais informações, quando atualizadas, devem renderizar a tela novamente.",
-        number: 8,
-    }
-]

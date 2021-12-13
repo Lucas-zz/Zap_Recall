@@ -1,14 +1,23 @@
 import FlashcardPage from "../FlashcardScreen/FlashcardPage";
 
+import mainLogo from "../../assets/logo.png";
+import nextArrows from "../../assets/next.png";
+
+import { decks } from "../../assets/Decks"
+
 export default function StartScreen({ setPage }) {
 
     return (
         <main className="main-initial-page">
-            <img className="logo-inicio" src="./assets/logo.png" alt="logo-zap-recall" />
-            <button onClick={() => setPage(<FlashcardPage />)} className="button-start" data-identifier="start-zap-recall">
-                Praticar React
-                <img className="next-arrows" src="./assets/next.png" alt="setas-next" />
-            </button>
+            <img className="logo-inicio" src={mainLogo} alt="logo-zap-recall" />
+            <div className="all-buttons">
+                {decks.map((deck =>
+                    <button onClick={() => setPage(<FlashcardPage chooseDeck={deck.data} />)} className="button-start" data-identifier="start-zap-recall">
+                        Praticar {deck.name}
+                        <img className="next-arrows" src={nextArrows} alt="setas-next" />
+                    </button>
+                ))}
+            </div>
         </main>
     );
 }

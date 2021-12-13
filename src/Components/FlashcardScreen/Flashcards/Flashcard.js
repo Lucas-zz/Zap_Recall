@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TopCounter from "./TopCounter";
 
+import turnArrow from "../../../assets/turn.png";
+
 export default function Flashcard({ question, answer, number, total, setAtual, setStatus }) {
     const [border, setBorder] = useState("");
 
@@ -15,7 +17,7 @@ export default function Flashcard({ question, answer, number, total, setAtual, s
                 <TopCounter number={number} total={total} />
                 <div className="central-text-question">{question}</div>
                 <span className="flashcard-bottom-arrow" data-identifier="arrow">
-                    <img className="bottom-arrow" src="./assets/turn.png" alt="card-bottom-arrow" />
+                    <img className="bottom-arrow" src={turnArrow} alt="card-bottom-arrow" />
                 </span>
             </div>
 
@@ -40,7 +42,7 @@ export default function Flashcard({ question, answer, number, total, setAtual, s
                 </div>
                 <div class="central-text">{answer}</div>
                 <span onClick={() => setAtual(number + 1)} class="flashcard-bottom-arrow" data-identifier="arrow">
-                    <img class="bottom-arrow" src="./assets/turn.png" alt="card-bottom-arrow" />
+                    <img class="bottom-arrow" src={turnArrow} alt="card-bottom-arrow" />
                 </span>
             </div>
 

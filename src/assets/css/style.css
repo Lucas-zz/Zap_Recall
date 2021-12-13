@@ -16,18 +16,21 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.logo-inicio {
-    margin: auto;
+.all-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 20px;
 }
 
 .button-start {
-    margin: auto;
-
-    padding: 24px 120px;
+    width: 400px;
+    height: 70px;
 
     display: flex;
     justify-content: center;
@@ -139,7 +142,6 @@ body {
     line-height: 21px;
     
     text-align: center;
-    word-break: break-all;
 }
 
 .central-text{
