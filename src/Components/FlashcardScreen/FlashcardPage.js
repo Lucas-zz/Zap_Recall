@@ -41,7 +41,7 @@ export default function FlashcardPage({ chooseDeck, deckName, setPage }) {
                 />
                 : (fail === 1
                     ? <EndingScreen
-                        result="Puts.."
+                        result="Putz.."
                         resultMessage={failOnlyOne}
                         resultMessage2="Não desanime! Na próxima você consegue!"
                         emoji={FailureEmoji}
@@ -49,7 +49,7 @@ export default function FlashcardPage({ chooseDeck, deckName, setPage }) {
                         setPage={setPage}
                     />
                     : <EndingScreen
-                        result="Puts.."
+                        result="Putz.."
                         resultMessage={failMoreThanOne}
                         resultMessage2="Não desanime! Na próxima você consegue!"
                         emoji={FailureEmoji}
